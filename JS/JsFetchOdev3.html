@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text" id="text1" placeholder="ReorderLevel">
+    <input type="text" id="text2" placeholder="CategoryID">
+    <input type="text" id="text3" placeholder="UnitsInStock">
+    <input type="text" id="text4" placeholder="Discontinued">
+    <input type="text" id="text5" placeholder="Name">
+
+    <button onclick="upload()">YÜKLE</button>
+
+</body>
+</html>
+
+<script>
+    function upload(){
+
+        let ReorderLevel = document.getElementById('text1').value;
+        let CategoryID = document.getElementById('text2').value;
+        let UnitsInStock = document.getElementById('text3').value;
+        let Discontinued = document.getElementById('text4').value;
+        let Name = document.getElementById('text5').value;
+
+        let newProduct = {
+            reorderLevel : ReorderLevel,
+            categoryID : CategoryID,
+            unitsInStock : UnitsInStock,
+            discontinued : Discontinued,
+            name : Name
+        };
+
+
+        let requestOptions = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            //js objesini json a çevirir
+            body: JSON.stringify(newProduct)
+        }
+
+        fetch('https://northwind.vercel.app/api/products', requestOptions)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+        })
+
+    }
+
+</script>

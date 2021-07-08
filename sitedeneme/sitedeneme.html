@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none;
+        display: inline;
+        margin-right: 10px;
+    }
+
+
+    #navigation {
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        cursor: pointer;
+        color: gray;
+    }
+
+    #section-top {
+        height: 500px;
+        background-image: url('https://startbootstrap.github.io/startbootstrap-clean-blog/assets/img/home-bg.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #main-header {
+        color: white;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #section-middle {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        font-weight: 500;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #section-middle div {
+        max-width: 600px;
+    }
+
+    hr {
+        width: 600px;
+        height: 1px;
+        color: black;
+        opacity: 0.4;
+    }
+
+    #section-middle a:hover {
+        cursor: pointer;
+        color: gray;
+    }
+
+    #older-posts {
+        display: flex;
+        justify-content: flex-end;
+        height: 50px;
+    }
+
+    #older-posts button {
+        background-color: #068BA5;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #section-footer div {
+        width: 500px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #section-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    h2 {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 800;
+        line-height: 1.2;
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        line-height: 1.2;
+        font-weight: 300;
+    }
+
+    p {
+        font-weight: 400;
+        line-height: 1.5;
+        font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+</style>
+
+
+<body>
+
+    <div id="section-top">
+        <div id="navigation">
+            <div>
+                <a href="#">Start Bootstrap</a>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Sample Posts</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main-header">
+            <div>
+                <h1>Clean Blog</h1>
+                <h3>A Blog Theme by Start Bootstrap</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="section-middle">
+        <div>
+            <a href="#">
+                <h2>Man must explore, and this is exploration at its greatest</h2>
+                <h3>Problems look mighty small from 150 miles up</h3>
+            </a>
+            <p>Posted by <a href="#">Start Bootstrap </a> on September 24, 2021</p>
+            <hr>
+        </div>
+        <div>
+            <a href="#">
+                <h2>I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2>
+            </a>
+            <p>Posted by <a href="#">Start Bootstrap </a> on September 18, 2021</p>
+            <hr>
+        </div>
+        <div>
+            <a href="#">
+                <h2>Science has not yet mastered prophecy</h2>
+                <p>We predict too much for the next year and yet far too little for the next ten.</p>
+            </a>
+            <p>Posted by <a href="#">Start Bootstrap </a> on September 18, 2021</p>
+            <hr>
+        </div>
+        <div>
+            <a href="#">
+                <h2>Failure is not an option</h2>
+                <p>Many say exploration is part of our destiny, but it’s actually our duty to future generations.</p>
+            </a>
+            <p>Posted by <a href="#">Start Bootstrap </a> on September 18, 2021</p>
+            <hr>
+        </div>
+        <div id="older-posts">
+            <a href="#"><button>OLDER POSTS →</button></a>
+        </div>
+    </div>
+
+    <div id="section-footer">
+        <div>
+            <ul>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>Github</li>
+            </ul>
+        </div>
+
+        <div>
+            <p>Copyright © Your Website 2021</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

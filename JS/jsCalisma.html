@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="body">
+    <div>
+        <input type="text" id="input1">
+        <input type="text" id="input2">
+        <button onclick="topla()">+</button>
+        <button onclick="cıkart()">-</button>
+        <button onclick="carp()">*</button>
+        <button onclick="bol()">/</button>
+
+        <div>
+            <label for="">Sonuç: <span id="sonuc"></span></label>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <div>
+        <table style="border-style: solid;">
+            <tr>
+                <td>1.Satır</td>
+            </tr>
+            <tr>
+                <td>2.Satır</td>
+            </tr>
+            <tr>
+                <td id="thirdRow">3.Satır</td>
+            </tr>
+            <tr>
+                <td>4.Satır</td>
+            </tr>
+            <tr>
+                <td>5.Satır</td>
+            </tr>
+        </table>
+
+        <button onclick="sil()">3.Satırı Sil</button>
+    </div>
+
+    <hr>
+
+    <div style="border-style: solid; height: 100px;" id="randomNumber">
+
+    </div>
+
+    <button onclick="randomGenerate()">Random Genişlik Oluştur</button>
+
+    <hr>
+
+    <input type="text" name="" id="inputElement">
+    <button onclick="bodyColorChange()">Body renk değiştir</button>
+    <br>
+    <hr>
+
+    <button onclick="destroy1()" class="destroying" id="buton1">Yok Et</button>
+    <button onclick="destroy2()" class="destroying" id="buton2">Yok Et</button>
+    <button onclick="destroy3()" class="destroying" id="buton3">Yok Et</button>
+
+
+</body>
+
+</html>
+
+<script>
+
+    //1)
+
+    // var x = "Ozan";
+    // let y = 10;
+    // const z = true;
+
+    //2)
+
+    // let dizi1 = ['Ali', 'Veli', 'Mehmet', 'Kemal', 'Hüseyin'];
+    // let dizi2 = [1, 2, 3, 4, 5];
+
+    //3)
+
+    let obje1 = {
+        name: 'Masa',
+        unitPrice: 24.99,
+        stockCount: 15000
+    }
+
+    //4)
+
+    let dizi3 = [];
+
+    let obje2 = {
+        name: 'Koltuk',
+        unitPrice: 99,
+        stockCount: 12000
+    }
+    let obje3 = {
+        name: 'Tv',
+        unitPrice: 150,
+        stockCount: 1000
+    }
+    let obje4 = {
+        name: 'Samsung',
+        unitPrice: 200,
+        stockCount: 12000
+    }
+    let obje5 = {
+        name: 'Kapı',
+        unitPrice: 300,
+        stockCount: 12000
+    }
+    dizi3.push(obje1);
+    dizi3.push(obje2);
+    dizi3.push(obje3);
+    dizi3.push(obje4);
+    dizi3.push(obje5);
+
+    // console.log(dizi3);
+
+    //5)
+    // console.log(dizi3.length);
+
+    //6) remove last element of an array
+    //dizi3.pop();
+
+    //7) removes the first element of an array
+    //dizi3.shift();
+
+    //8)
+
+    console.log(dizi3.find(x => x.name = 'Samsung'));
+
+    //9)
+
+    console.log(dizi3.filter(x => x.unitPrice > 100));
+
+    //10)
+
+
+    let input1 = Number(document.getElementById('input1').value);
+    let input2 = Number(document.getElementById('input2').value);
+
+
+    function topla() {
+        document.getElementById('sonuc').innerHTML = input1 + input2;
+    }
+    function cıkart() {
+        document.getElementById('sonuc').innerHTML = input1 - input2;
+    }
+    function carp() {
+        document.getElementById('sonuc').innerHTML = input1 * input2;
+    }
+    function bol() {
+        document.getElementById('sonuc').innerHTML = input1 / input2;
+    }
+
+    //11)
+
+    function sil() {
+        document.getElementById('thirdRow').innerHTML = "";
+    }
+
+    //12)
+    let genislik = '';
+    function randomGenerate() {
+
+        let random = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
+        genislik = random + 'px';
+        return document.getElementById('randomNumber').style.width = genislik;
+    }
+
+    //13)
+    let renk = '';
+    function bodyColorChange() {
+        renk = document.getElementById('inputElement').value;
+        document.getElementById('body').style.backgroundColor = renk;
+    }
+
+    //14)
+    function destroy() {
+        document.getElementsByClassName('destroying').style.display = "none";
+        
+    }    
+
+
+
+
+
+</script>

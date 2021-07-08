@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="text" placeholder="ID Girin">
+    <button onclick="remove()">SİL</button>
+</body>
+
+</html>
+
+<script>
+
+    function remove() {
+        let id = document.getElementById('text').value;
+
+        let requestOptions = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "DELETE",
+
+            body: JSON.stringify()
+        }
+
+        fetch('https://northwind.vercel.app/api/suppliers/' + id, requestOptions)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            })
+    }
+</script>

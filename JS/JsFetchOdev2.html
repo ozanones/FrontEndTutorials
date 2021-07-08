@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <table style="width: 100%;" id="products">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>description</th>
+                <th>name</th>
+            </tr>
+        </thead>
+
+        <tbody >
+
+
+            <!-- <tr>
+                <td id="row1"></td>
+                <td id="row2"></td>
+                <td id="row3"></td>
+            </tr> -->
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <button onclick="getData()">Dataları git getir</button>
+
+</body>
+
+</html>
+
+<script>
+    function getData() {
+
+        //fetch default get isteği yapar
+        fetch('https://northwind.vercel.app/api/categories')
+            .then((res) => res.json())
+            .then((data) => {
+
+                data.map((item) => {
+
+                    let newtr = document.createElement('tr');
+                    let tdID = document.createElement('td');
+                    tdID.innerHTML = item.id;
+                    let tdDescription = document.createElement('td');
+                    tdDescription.innerHTML = item.description;
+                    let tdName = document.createElement('td');
+                    tdName.innerHTML = item.name;
+
+                    newtr.appendChild(tdID);
+                    newtr.appendChild(tdDescription);
+                    newtr.appendChild(tdName);
+
+                    document.getElementById('products').appendChild(newtr);
+
+
+                    newtr.addEventListener('click', function(){
+                        this.style.display = 'none';
+                    })
+
+                    // let row1 = document.createElement('tr');
+                    // row1.innerHTML = item.id;
+                    // document.getElementById('row1').appendChild(row1)
+
+                    // let row2 = document.createElement('tr');
+                    // row2.innerHTML = item.description;
+                    // document.getElementById('row2').appendChild(row2);
+
+                    // let row3 = document.createElement('tr');
+                    // row3.innerHTML = item.description;
+                    // document.getElementById('row3').appendChild(row3);
+
+                });
+
+            })
+    }
+
+
+
+
+</script>

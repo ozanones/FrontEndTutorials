@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="getPrice()">ÜRÜNLERİN fiyatlarının %18 ini console a yazdır</button>
+
+</body>
+
+</html>
+
+<script>
+
+    function getPrice() {
+        fetch('https://northwind.vercel.app/api/products')
+            .then((res) => res.json())
+            .then((data) => {
+                data.map((item) => {
+                    console.log((item.unitPrice)*1.18);
+                })
+
+            })
+    }
+
+</script>
