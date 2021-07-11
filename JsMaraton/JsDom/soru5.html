@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Gireceğiniz Sayıya Kadar Buton Görmek İçin</label>
+    <input type="text" id="number1">
+    <button id="sum">Getir</button>
+</body>
+</html>
+
+<script>
+
+    document.getElementById('sum').addEventListener('click', function(){
+
+        let number1 = Number(document.getElementById('number1').value);
+
+        for (let i = 1; i <= number1; i++) {
+
+            let breakLine = document.createElement('br');
+            document.body.appendChild(breakLine);
+            let button = document.createElement('button');            
+            document.body.appendChild(button);            
+            button.innerHTML = i + '. Button';                     
+        }        
+    })
+    
+</script>

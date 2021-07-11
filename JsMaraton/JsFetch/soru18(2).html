@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>https://northwind.vercel.app/api/products ürünlerin unitPrice toplamını console a yazdır. ( önce çektiğimiz array da herhangi bir döngüyle döneceğiz. Sonra scope dışında tanımladığımız bir toplam değerine bu değerleri ekleyip console da yazdıracağız)</h1>
+
+    <button id="getProducts">Ürünlerin unitPrice toplamını console'a getir</button>
+</body>
+
+</html>
+<script>
+    document.getElementById('getProducts').addEventListener('click', function(){
+        fetch('https://northwind.vercel.app/api/products')
+        .then((res) => res.json())
+        .then((data) => {
+            
+            let total = 0;
+            for (let i = 0; i < data.length; i++) {
+                total += data[i].unitPrice;
+            }
+            console.log(total);
+        });
+    });
+</script>

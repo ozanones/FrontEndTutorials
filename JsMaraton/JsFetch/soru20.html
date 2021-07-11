@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>https://northwind.vercel.app/api/orders her bir siparişin TOPLAM tutarını console a yazdır</h1>
+    <button id="getTotal">Get Total Price</button>
+</body>
+</html>
+
+<script>
+
+    document.getElementById('getTotal').addEventListener('click', function(){
+        fetch('https://northwind.vercel.app/api/orders')
+        .then((res) => res.json())
+        .then((data) => {
+            
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i].details.unitPrice);                    
+                }
+           
+
+            
+        });
+    });
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>https://northwind.vercel.app/api/categories adresinde kaç data olduğunu çekip console a yazdır</h1>
+    <button id="getCategoryCount">Category sayfasından çekilen verinin sayısını console'da gör</button>
+</body>
+</html>
+
+<script>
+    document.getElementById('getCategoryCount').addEventListener('click', function(){
+        fetch('https://northwind.vercel.app/api/categories')
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data.length);
+        });
+    });
+</script>

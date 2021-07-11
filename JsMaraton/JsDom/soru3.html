@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Büyük Yazmasını İstediğiniz Kelimeyi Girin</label>
+    <input type="text" id="upper">
+    <button id="uppercase">Büyüt</button>
+</body>
+</html>
+
+<script>
+
+    document.getElementById('uppercase').addEventListener('click', function(){
+        let text = document.getElementById('upper').value;
+        console.log(text.toUpperCase());
+    })
+</script>

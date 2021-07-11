@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="text1" placeholder="CompanyName">
+    <input type="text" id="text2" placeholder="ContactName">
+    <input type="text" id="text3" placeholder="City">
+    <button id="posting">Post Et</button>
+
+</body>
+
+</html>
+
+<script>
+
+    document.getElementById('posting').addEventListener('click', function () {
+
+        let text1 = document.getElementById('text1').value;
+        let text2 = document.getElementById('text2').value;
+        let text3 = document.getElementById('text3').value;
+
+        let newSuppliers = {
+            companyName: text1,
+            contactName: text2,
+            address: {
+                city: text3
+            }
+        };
+
+        let requestOptions = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            //js objesini json a çevirir
+            body: JSON.stringify(newSuppliers)
+        }
+
+        fetch('https://northwind.vercel.app/api/suppliers', requestOptions)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            })
+
+
+    });
+
+</script>
