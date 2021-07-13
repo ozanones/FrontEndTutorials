@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
+</head>
+<body>
+
+    <button>Ekrana bir buton bir p ve bir span koy. Butona tıkladığında tüm elementleri yok etsin (body içeriğini boşaltabilirsin)</button>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem atque fugiat iusto ipsum. Velit amet facere distinctio nam atque iure autem, voluptates ullam quibusdam itaque rem, quaerat odio fuga asperiores.</p>
+    <br>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus necessitatibus dolore unde autem eligendi atque maxime nesciunt ex consequuntur enim, ipsum ratione porro dolorem facere perferendis minus, maiores eaque dolorum?</span>
+
+</body>
+</html>
+
+<script>
+
+    $('button').click(function(){
+        $('body').css('display', 'none');
+    });
+
+
+</script>

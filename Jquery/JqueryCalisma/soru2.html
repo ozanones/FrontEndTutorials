@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <input type="text" id="number1">
+    <input type="text" id="number2">
+    <br>
+
+    <span id="result"></span>
+    <br>
+
+    
+    <button>Ekrana iki input bir buton koy. Butona tıklandığında inputtan aldığı değerleri çarpıp console a yazdırsın ( Number a çevirebilirsin)</button>
+
+</body>
+</html>
+
+<script>
+
+    $('button').click(function(){
+        let input1 = $('#number1').val();
+        let number1 = Number(input1);
+
+        let input2 = $('#number2').val();
+        let number2 = Number(input2);
+        
+        $('#result').html(number1 * number2);
+        
+
+    });
+
+</script>
