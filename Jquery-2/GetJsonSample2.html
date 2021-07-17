@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    .row{
+        background-color: yellow;
+    }
+</style>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+    
+</body>
+</html>
+
+<script>
+    let url = 'https://northwind.vercel.app/api/categories';
+
+    $.getJSON(url, function(data) {
+        
+        data.map((item) => {
+
+            $('tbody').append(
+                '<tr class = "row">' +
+                    '<td>' + item.id + '</td>' +
+                    '<td>' + item.name + '</td>' +
+                    '<td>' + item.description + '</td>' +
+
+                '</tr'
+
+            )
+        })
+    })
+    
+
+
+</script>

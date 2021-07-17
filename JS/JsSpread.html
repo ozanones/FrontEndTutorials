@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let countries = ['England', 'Turkey', 'Italy', 'Iran', 'Azerbaycan', 'Kıbrıs', 'Rusya']
+
+    //diziye eleman ekleme
+    countries.push('Greece');
+
+    //diziye yeni bir eleman ekleyeceğim fakat yeni bir dizi istiyorum
+    let newCountries = [];
+
+    newCountries.push('Greece');
+    countries.map((item) => {
+        newCountries.push(item);
+    })
+
+    //spread...
+
+    let newCountries2 = [...countries, 'Greece']
+
+    let newCountries3 = ['Greece', ...countries, 'Germany']
+
+    let otherCountries = ['venezuella', 'Şili', 'Küba', 'Kolombiya'];
+
+    let newCountries4 = [...countries, ...otherCountries];
+
+</script>

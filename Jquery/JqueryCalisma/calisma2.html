@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- https://northwind.vercel.app/api/suppliers -->
+    <!-- bu endpointe bir data POST et ve işlem başarılıysa console a success yazdırsın -->
+
+    <label for="">Company Name: </label>
+    <input type="text" id="companyName">
+
+    <label for="">Contact Name: </label>
+    <input type="text" id="contactName">
+
+    <label for="">Contact Title: </label>
+    <input type="text" id="contactTitle">
+
+    <label for="">Address City: </label>
+    <input type="text" id="city">
+
+    <button>POST</button>
+
+</body>
+
+</html>
+
+<script>
+
+    $('button').click(function(){   
+
+        let supplier = new Object();
+        let address = new Object();
+        
+
+        let companyName = $('#companyName').val();
+        let contactName = $('#contactName').val();
+        let contactTitle = $('#contactTitle').val();
+        let city = $('#city').val();
+
+        supplier.companyName = companyName;
+        supplier.contactName = contactName;
+        supplier.contactTitle = contactTitle;
+        supplier.address = address;
+        address.city = city;
+
+        $.ajax({
+            url: 'https://northwind.vercel.app/api/suppliers',
+            type: 'POST',
+            data: supplier,
+            success: function () {
+                console.log('success');
+            }
+
+        })
+    });
+
+
+
+
+
+
+
+</script>

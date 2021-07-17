@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+</head>
+
+<body>
+
+    <!-- 2) customerların listelendiği bir table tasarla en az 4 kolon olsun -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Customers Page</h1>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <button>Get All Customers</button>
+    </div>
+
+    <div class="container">
+        <span>Şehri London Olan Kişi Sayısı: </span>
+        <span id="customerCount"></span>
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Contact Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Contact Title</th>
+                    <th scope="col">City</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    $(document).on('click', 'button', function(){
+
+        fetch('https://northwind.vercel.app/api/customers')
+        .then((res) => res.json())
+        .then((data) => {
+
+            data.map((item => {
+
+                let color = 'white';
+
+                if(item.address?.city == 'London'){
+                    color = 'tomato';
+                }
+
+                let newPhone = item.address?.phone?.replaceAll(' ', '').replaceAll('(', '').replaceAll(')', '').replaceAll('-', '').replaceAll('.', '');
+
+                $('tbody').append(
+                '<tr style = "background-color:' + color + '">' +
+                '<td>' + item.id + '</td>' +
+                '<td>' + item.companyName?.toUpperCase() + '</td>' +
+                '<td>' + item.contactName + '</td>' +
+                '<td>' + newPhone + '</td>' +
+                '<td>' + item.contactTitle + '</td>' +
+                '<td>' + item.address.city + '</td>' +
+                '</tr>'
+            )
+
+            }))
+
+            let customerLondon = data.filter(x=> x.address.city == 'London');
+            $('#customerCount').html(customerLondon.length);
+            
+        })
+
+    })
+
+
+</script>
