@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- Dışarıdan iki sayı alan ve karelerinin toplamını return eden bir ARROW function yazdır ( kaynak: https://www.w3schools.com/js/js_arrow_function.asp) -->
+
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+
+    <button id="calculate">Calculate</button>
+
+    <span>Result: </span>
+    <span id="result"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    $('#calculate').click(function() {
+
+        let input1 = document.getElementById('input1').value;
+        let input2 = document.getElementById('input2').value;
+
+        Square = (x, y) => {
+            return x * x + y * y;
+        }
+
+        let result = Square(input1, input2);
+
+        document.getElementById('result').innerHTML = result;
+    })
+
+
+</script>
